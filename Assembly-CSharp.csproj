@@ -46,12 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\Stair.cs" />
      <Compile Include="Assets\_Scripts\StairSpawner.cs" />
      <Compile Include="Assets\_Scripts\backgroundScroller.cs" />
      <Compile Include="Assets\_Scripts\objectScroller.cs" />
      <Compile Include="Assets\_Scripts\playerController.cs" />
+     <Compile Include="Assets\objectMover.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
