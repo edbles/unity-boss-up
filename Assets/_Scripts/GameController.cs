@@ -15,13 +15,15 @@ public class GameController : MonoBehaviour {
 	//private string gameState = "";
 	private Vector3 stairStartPos = new Vector3(3.5f, -0.0907917f, 0.0f);
 	private Vector3 onScreenStart = new Vector3 (0.0f, 0.0f, 0.0f);
-	private Vector3 offScreenStart = new Vector3 (6.0f, 0.0f, 0.0f);
+	private Vector3 offScreenStart = new Vector3 (5.9f, 0.0f, 0.0f);
 	private Vector2 stairVectorSpeed;
+	private float score;
+
 
 
 	// Use this for initialization
 	void Start () {
-
+		score = 0;
 		StartCoroutine (SpawnStairs ());
 		SpawnBackground ();
 	
@@ -58,7 +60,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		guiText.text = "Score: " + score;
 
 
 	}

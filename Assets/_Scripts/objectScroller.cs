@@ -14,10 +14,10 @@ public class objectScroller : MonoBehaviour {
 	void Start () {
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		scrollSpeed = gameController.worldSpeed;
-		startPosition = new Vector2(6.0f, 0);
+		startPosition = new Vector2(5.9f, 0);
 		//rigidbody2D.position = startPosition;
 		rigidbody2D.velocity = new Vector2 (-scrollSpeed, 0);
-		endPositionX = -6.0f;
+		endPositionX = -5.9f;
 	}
 	
 	// Update is called once per frame

@@ -90,7 +90,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &48268567
 Transform:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &87348660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -236,6 +236,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 251304388}
   - 114: {fileID: 251304387}
+  - 132: {fileID: 251304389}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -267,11 +268,34 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251304386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!132 &251304389
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 251304386}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Score:'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 5, y: -5}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4283629602
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &1182364638
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,9 +307,10 @@ GameObject:
   - 50: {fileID: 1182364641}
   - 61: {fileID: 1182364640}
   - 114: {fileID: 1182364642}
-  m_Layer: 0
+  - 82: {fileID: 1182364643}
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1182364638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64550996, y: -.293457747, z: 0}
+  m_LocalPosition: {x: -2.6400001, y: -.237419844, z: 0}
   m_LocalScale: {x: .53125, y: .5, z: 1}
   m_Children:
   - {fileID: 1626965916}
@@ -313,8 +338,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .375, y: .200000003}
-  m_Center: {x: -.0500000007, y: -.150000006}
+  m_Size: {x: .375, y: .140000001}
+  m_Center: {x: -.0399999991, y: -.159999996}
 --- !u!50 &1182364641
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -343,6 +368,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 150
   verticalSpeed: 150
+  laneRange: .200000003
+  bottomLaneLowPoint: -.389999986
+  topLaneLowPoint: .129999995
+--- !u!82 &1182364643
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182364638}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 9ea5379ecfef3334db5be9887ded6376, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1223968262
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +472,7 @@ GameObject:
   - 92: {fileID: 1449962671}
   - 124: {fileID: 1449962670}
   - 81: {fileID: 1449962669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -467,7 +553,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1626965916}
   - 212: {fileID: 1626965917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ghost_bike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +590,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2508140001
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d50bd1791973c9545aecfa49b568a3e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -524,7 +610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1882019785
 BoxCollider2D:
   m_ObjectHideFlags: 0
